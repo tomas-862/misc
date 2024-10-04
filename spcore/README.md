@@ -1,1 +1,1 @@
-# this is readme fiel for spcore
+# this is readme file for spcore
