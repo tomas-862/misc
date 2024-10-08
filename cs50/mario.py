@@ -19,7 +19,8 @@ while True:
 
 counter = 0
 while counter < x:
-    print(" " *(x - counter), "#" *(counter + 1))
-    counter +=1
+    print(" " * (x - counter), "#" * (counter + 1))
+    counter += 1
+
 
 
