@@ -12,13 +12,16 @@ print() # This prints an empty line
 print("what is 4 + 2 + 5 * 2 / 4 + 2")
 print(4 + 2 + 5 * 2 / 4 + 2)
 print() # This prints an empty line
-print("is 3 + 2 =5")
-print(3 +2 == 5)
+print("is 3 + 2 =5?")
+print(3 + 2 == 5)
 print() # This prints an empty line
-
+print("is 3 + 3 = 5?")
+print(3 + 3 == 5)
 print() # This prints an empty line
-
+print("is 3 + 2 >= 5?")
+print(3 + 2 >= 5)
 print() # This prints an empty line
-
+print("is 3 + 3 <= 5?")
+print(3 + 3 <= 5)
 print() # This prints an empty line
 
