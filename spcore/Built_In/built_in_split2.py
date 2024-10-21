@@ -1,0 +1,19 @@
+# we will make small script and will use '\n'.
+# '\n' is a special escape sequence that represents a newline character. 
+# When included in a string, it instructs Python to start a new line wherever it appears
+
+show_run = "interface G0/0/0\n no shut\n description Connected to CSR1\n ip address 10.0.0.1 255.255.255.0"
+print()
+print(show_run)
+print()
+
+# we will 'split' our scrip per '/n'
+updated_show_run = show_run.split("\n")
+print(show_run.split("\n"))
+print()
+
+# we can get the same result using 'split.lines' built-in and not using '\n' as split value
+updated_show_run = show_run.split("\n")
+print(show_run.splitlines())
+print()
+
