@@ -1,5 +1,5 @@
-# create a var string "ccie" with value "CCIE Enterprise Infrasttucture\n"
-ccie = "CCIE Enterprise Infrastructure\n"
+# create a var string "ccie" with value "CCIE Enterprise Infrasttucture\n CCIE Service Provider\n CCIE Security"
+ccie = "CCIE Enterprise Infrasttucture\n CCIE Service Provider\n CCIE Security"
 
 # create a var string "ip_address1" value "10.1.2.100"
 ip_address1 = "10.1.2.100"
