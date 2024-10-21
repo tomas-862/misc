@@ -2,13 +2,13 @@ We can check type of variable using command 'type' in python
   
 >>>
 >>>
->>> num = 20
->>> text = "20"
+>>> num = 20  
+>>> text = "20"  
 >>>
->>> type(num)
+>>> type(num)  
 <class 'int'>
 >>>
->>> type (text)
+>>> type (text)  
 <class 'str'>
 >>>
 >>>
