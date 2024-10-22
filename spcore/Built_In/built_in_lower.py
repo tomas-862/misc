@@ -1,8 +1,5 @@
-# we will use built-in 'lower' to convert and print text in lower case. 
+# We will use the built-in 'lower' method to convert and print text in lowercase.
 text = input("Enter text: ")
 
-# we will print text in lower case 
+# Print the text converted to lowercase
 print(text.lower())
-
-
-
