@@ -30,4 +30,11 @@ i.e. variable type 'List' can have multiple data types in it, separated by comma
 csr1000v  
   
 
-  
+if I do '1:' it will print everything from 1 to the end.  
+>>> print(info[1:])  
+['csr1000v', 10, 16.8, 'This router is a']  
+>>>  
+If I do '1:3' it will print everything from 1 to 3. Included 1, but not 3 i.e. 1 and 2.  
+>>> print(info[1:3])  
+['csr1000v', 10]  
+>>>  
