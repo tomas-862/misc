@@ -1,11 +1,10 @@
-## we will use built-in 'replace' to replace '.' to ':' in mac address
-mac_address = input("Enter mac address in format aa.bb.cc.dd.ee.ff: ")
+# We will use the built-in 'replace' method to change '.' to ':' in a MAC address.
+mac_address = input("Enter MAC address in the format aa.bb.cc.dd.ee.ff: ")
 
-# using 'replace' we will print out mac address in format aa:bb:....
-# built in 'replace' usage is VAR.replace("A" , "C")
-# where VAR - variable where to look at. 
-# where A - what to replace
-# where C - to what to replace
-print("mac_address in new format", mac_address.replace("." , ":"))
-
-
+# Using 'replace', we will print out the MAC address in the format aa:bb:cc:dd:ee:ff.
+# The usage of the built-in 'replace' method is as follows:
+# VAR.replace("A", "C")
+# - VAR: the variable to search in
+# - "A": the substring to replace
+# - "C": the substring to replace with
+print("MAC address in new format:", mac_address.replace(".", ":"))
