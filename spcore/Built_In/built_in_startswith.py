@@ -1,8 +1,9 @@
-# We will use buil-in libraries 
+# We will use built-in libraries to demonstrate string methods.
 
-################# 'startwith' #############
-# Set variable
+################# 'startswith' #############
+
+# Set the variable for the IP address
 IP_Address = "192.168.1.1"
 
-# Check if variable IP_Address starts with "192" and print boolean (True or False)
+# Check if the variable IP_Address starts with "192" and print the result as a boolean (True or False)
 print(IP_Address.startswith("192"))
