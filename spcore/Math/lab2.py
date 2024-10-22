@@ -1,15 +1,21 @@
-# create file lab2.py
-# file must print following: 
-# show ip interface brief
-# show ip route | include 192.168.1.0
-# show interface status
-# This lab is Tomas CCNP SP lab
-# The password is "Cisco"
+# lab2.py
+# This script prints necessary commands and details for Tomas's CCNP SP lab.
 
+# Commands to display network information
+commands = [
+    "show ip interface brief",
+    "show ip route | include 192.168.1.0",
+    "show interface status"
+]
 
+# Lab details
+lab_details = [
+    "This lab is Tomas's CCNP SP lab.",
+    'The password is "Cisco".'
+]
 
-print("show ip interface brief")
-print("show ip route | include 192.168.1.0")
-print("show interface status")
-print("This lab is Tomas CCNP SP lab")
-print('The password is "Cisco"')
+# Print the commands
+    print(command)
+
+# Print lab details
+    print(detail)
