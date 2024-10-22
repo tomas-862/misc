@@ -1,15 +1,15 @@
-# create var "ip_address" with value "10.1.5.5."
+# Create a variable 'ip_address' with the value "10.1.5.5"
 ip_address = "10.1.5.5"
 
-# with built-in 'replace' replace '5' with '2' and store in new var "temp_ip_address"
-temp_ip_address = ip_address.replace("5" , "2")
-print(temp_ip_address)
+# Use the built-in 'replace' method to replace '5' with '2' and store the result in a new variable 'temp_ip_address'
+temp_ip_address = ip_address.replace("5", "2")
+print(temp_ip_address)  # Output: "10.1.2.2"
 
-# with 'replace' built-in replace 1st occurance of '2' with 100 and store as "new_ip_address"
+# Replace the first occurrence of '2' with '100' using 'replace' and store the result as 'new_ip_address'
 new_ip_address = temp_ip_address.replace("2", "100", 1)
 
-# create var "csr_ip_address" with value "The IP address of the gateway router is {}"
+# Create a variable 'csr_ip_address' with a formatted string
 csr_ip_address = "The IP address of the gateway router is {}"
 
-# print csr router address is 10.1.100.2
-print(csr_ip_address.format(new_ip_address))
+# Print the formatted message with the new IP address
+print(csr_ip_address.format(new_ip_address))  # Output: "The IP address of the gateway router is 10.1.100.2"
