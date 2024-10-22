@@ -15,7 +15,7 @@ lab_details = [
 ]
 
 # Print the commands
-    print(command)
+print(commands)
 
 # Print lab details
-    print(detail)
+print(lab_details)
