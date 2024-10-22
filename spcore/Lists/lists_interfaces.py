@@ -1,40 +1,44 @@
-# create a list "interface1"
-interface1 = ["description Configured by Python", "switchport mode access", "switchport access vlan 10"]
+# Create a list named "interface1"
+interface1 = [
+    "description Configured by Python", 
+    "switchport mode access", 
+    "switchport access vlan 10"
+]
 print(interface1)
 
-# we can use built-in functions to add additional data in the list. List can have multiple data types. 
-# we will use 'append' funciton
+# We can use built-in functions to add additional data to the list. Lists can contain multiple data types.
+# We will use the 'append' function to add an item to the end of the list.
 interface1.append("no shut")
 print(interface1)
 print()
 
-#printing different data from the list, we use number of the data position in the list.
-print(interface1[2])
-print(interface1[2:])
-print(interface1[1:3])
+# To print different data from the list, we use the index corresponding to the item's position in the list.
+print(interface1[2])      # Access the item at index 2
+print(interface1[2:])     # Print all items from index 2 to the end
+print(interface1[1:3])    # Print items from index 1 to 3 (excluding index 3)
 print()
 
-# if we want to add new data to the list somewhere not in the end, I can use buil-in funcion 'insert' 
-# we will add new string "duplex full" int he position 1 of the list 
+# If we want to add new data at a specific position in the list (not just at the end), we can use the built-in function 'insert'.
+# Here, we will add the string "duplex full" at position 1 in the list.
 interface1.insert(1, "duplex full")
 print(interface1)
 print()
 
-# we can remove last item from the list using built-in 'pop' with no value
-# lets remove last data 'no shut'
+# We can remove the last item from the list using the built-in 'pop' function without any arguments.
+# Let's remove the last entry, which is 'no shut'.
 interface1.pop()
 print(interface1)
 print()
 
-# we can extend existing list with data we have in another string. 
-# lets create new list 'basic' and extend it with data we have in the list 'interface1' 
-# we will use 'extend' built-in funcion. 
+# We can also extend an existing list with the data we have in another list.
+# Let's create a new list named 'basic' and extend it with the data from the list 'interface1'.
+# We will use the 'extend' built-in function for this purpose.
 basic = ["configure terminal", "interface G0/0/0"]
 basic.extend(interface1)
 print(basic)
 
-# if we want to change value of data in the list it is easy to change by defining sequence number and updated data
-# we can change "interface G0/0/0" to "interface G0/0/1" in the list
+# If we want to change the value of a specific item in the list, we can do so by specifying its index and the updated value.
+# We can change "interface G0/0/0" to "interface G0/0/1" in the list.
 print(basic)
 basic[1] = "interface G0/0/1"
 print(basic)
