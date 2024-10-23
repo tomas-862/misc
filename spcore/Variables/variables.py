@@ -1,20 +1,21 @@
-#  install base HW
-Total_routers = 50
-Total_swithces = 100
-Total_firewalls = 10
+# Install base hardware
+total_routers = 50
+total_switches = 100
+total_firewalls = 10
 
-# calculate my install base HW
-Total_devices = Total_routers + Total_swithces + Total_firewalls
+# Calculate the total installed base of hardware
+total_devices = total_routers + total_switches + total_firewalls
 
-#  intall base SW 
-Router_version = "IOS-XE"
-Switch_version = "IOS 15.4"
+# Installed base software versions
+router_version = "IOS-XE"
+switch_version = "IOS 15.4"
 
-# FTE resourse
-IT_engineers = 4
+# Number of IT engineers
+it_engineers = 4
 
-# calculate work load 
-Work_load = Total_devices / IT_engineers
+# Calculate workload per engineer
+workload = total_devices / it_engineers
 
-print("my install base is", Total_devices, "devices")
-print("work load is", Work_load,"devices per engineer")
+# Print results
+print(f"My installed base is {total_devices} devices.")
+print(f"Workload is {workload:.2f} devices per engineer.")
