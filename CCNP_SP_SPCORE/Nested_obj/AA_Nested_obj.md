@@ -1,6 +1,8 @@
-## Nested Object ##
-Nested (įdėtas) objects when you combine multiple dictionaries and or List into single variable  
-As example lets create a list which contains multiple dictionararies inside
+## Nested Objects
+
+Nested objects are created when you combine multiple dictionaries and/or lists into a single variable. 
+
+For example, let's create a list that contains multiple dictionaries:
 
 ```python
 devices = [
@@ -16,11 +18,19 @@ len(devices)
 print(devices)
 
 ```
+In this case, we have a single variable of type list that contains two dictionaries. 
 
-Therefore we have single variable (type list), which contains 2 dictionaries inside. 
-If we want to print only one of dictionaries, we need to use index 
 
+To print only one of the dictionaries, we can use its index:
 ```python
 print(devices[0])
 
 ```
+
+If we want to print a specific key within a dictionary, we need to specify both the index and the key of the value we want to print:
+```python
+print(devices[0] ["hostname"])
+
+```
+
+
