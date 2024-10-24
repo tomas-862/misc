@@ -1,8 +1,3 @@
-## Nested Object ##
-Nested (įdėtas) objects when you combine multiple dictionaries and or List into single variable  
-As example lets create a list which contains multiple dictionararies inside
-
-```python
 devices = [
     {
         "hostname": "R1", "mgm-ip": "10.1.1.1", "Vendor": "cisco", "model": "CSR100"
@@ -14,4 +9,3 @@ devices = [
 type(devices)
 len(devices)
 print(devices)
-```
