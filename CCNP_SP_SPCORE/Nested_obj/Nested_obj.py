@@ -9,3 +9,5 @@ devices = [
 type(devices)
 len(devices)
 print(devices)
+
+print(devices[0])

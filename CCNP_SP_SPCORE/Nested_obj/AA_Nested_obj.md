@@ -14,4 +14,13 @@ devices = [
 type(devices)
 len(devices)
 print(devices)
+
+```
+
+Therefore we have single variable (type list), which contains 2 dictionaries inside. 
+If we want to print only one of dictionaries, we need to use index 
+
+```python
+print(devices[0])
+
 ```
