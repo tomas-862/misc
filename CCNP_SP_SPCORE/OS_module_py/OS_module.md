@@ -1,45 +1,49 @@
-## OS module in Python  
-To navigate and manipulate direcotries and files we use OS module  
+## OS Module in Python
+The OS module in Python is used to navigate and manipulate directories and files.
 
-Install OS module in Python  
+To use the OS module, simply import it as follows:
 ```python
-import OS
+import os
 ```
 
-To check current workign directory (same as we use PWD) we use "get" and "cwd" (current working direcotry) under "os".  
+To check the current working directory (similar to the `pwd` command in the shell), use `os.getcwd()`:
 ```python
-os.getcwd()
-print(os.getcwd())
-# output: '/mnt/c/Users/tomas/OneDrive/Documents/Git/misc/CCNP_SP_SPCORE/OS_module_py'
+current_directory = os.getcwd()
+print(current_directory)
+# Example output: '/mnt/c/Users/tomas/OneDrive/Documents/Git/misc/CCNP_SP_SPCORE/OS_module_py'
 ```
 
-to change dir (same as we use CD) we use "chdir" under "os and define target directory.  
+To change the directory (similar to the `cd` command), use `os.chdir()` and specify the target directory:
 ```python
 os.chdir("/mnt/c/Users/tomas/OneDrive/Documents/Git")
-print (os.getcwd())
-# output: '/mnt/c/Users/tomas/OneDrive/Documents/Git'
+print(os.getcwd())
+# Example output: '/mnt/c/Users/tomas/OneDrive/Documents/Git'
 ```
 
-to make new dir we use 'os.mkdir' 
+To create a new directory, use `os.mkdir()`:
 ```python
 os.chdir("/mnt/c/Users/tomas/OneDrive/Documents/Git/misc/CCNP_SP_SPCORE/OS_module_py")
-os.mkdir ("test")
+os.mkdir("test")
 print(os.listdir())
-print()
-# output: '['OS_module.md', 'OS_module.py', 'test']' 
+# Example output: ['OS_module.md', 'OS_module.py', 'test']
 ```
 
-to delete direcotry we use 'os.removedirs'  
+To delete a directory, use `os.rmdir()` (note that `os.removedirs()` will remove intermediate directories as well if they are empty):
 ```python
-os.removedirs("test")
+os.rmdir("test")
 print(os.listdir())
-print()
-# output: '['OS_module.md', 'OS_module.py']'
+# Example output: ['OS_module.md', 'OS_module.py']
 ```
 
-to view file with 'os'' module using 'cat' 
+### Viewing File Contents
+
+To execute a command similar to `cat` using `os.system()`, you can display the contents of a file. Note that `os.system()` is used to execute shell commands and isn't the typical way to read file content in Python:
 ```python
-print(os.system("OS_module.py"))
-# output: //// content of thr file //// '
-```
+import os
 
+# The following command will not display file contents directly.
+# Instead, you should read the file using Python's file handling.
+
+output = os.system("cat OS_module.py")
+print(output)
+```
