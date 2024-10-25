@@ -20,6 +20,26 @@ print (os.getcwd())
 # output: '/mnt/c/Users/tomas/OneDrive/Documents/Git'
 ```
 
-to make file, we use 
+to make new dir we use 'os.mkdir' 
+```python
+os.chdir("/mnt/c/Users/tomas/OneDrive/Documents/Git/misc/CCNP_SP_SPCORE/OS_module_py")
+os.mkdir ("test")
+print(os.listdir())
+print()
+# output: '['OS_module.md', 'OS_module.py', 'test']' 
+```
 
+to delete direcotry we use 'os.removedirs'  
+```python
+os.removedirs("test")
+print(os.listdir())
+print()
+# output: '['OS_module.md', 'OS_module.py']'
+```
+
+to view file with 'os'' module using 'cat' 
+```python
+print(os.system("OS_module.py"))
+# output: //// content of thr file //// '
+```
 
