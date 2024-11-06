@@ -47,3 +47,29 @@ vlan_exists(80)
 
 
 
+# Example: Using Multiple Functions in Python
+
+In Python, you can define multiple functions to perform different tasks and call them as needed. This practice helps organize code more effectively and allows for the reuse of code blocks. Below is an example that includes multiple functions, including a print statement to display formatted information.
+
+### Function: `vlan_info`
+
+This function prints information about a VLAN, including its ID and name.
+
+```python
+def vlan_info(id, name):
+    # Use the print function to display formatted VLAN information.
+    print(f"The VLAN ID is {id} and the name of the VLAN is {name}.")
+```
+
+- `def vlan_info(id, name):`: Defines a function named `vlan_info` with two parameters: `id` for the VLAN ID and `name` for the VLAN name.
+- `print(f"The VLAN ID is {id} and the name of the VLAN is {name}.")`: Uses a formatted string to print the VLAN ID and name. The `f` before the string allows for the inclusion of variables directly inside the curly braces `{}`.
+
+### Example Call
+
+You can call the `vlan_info` function to display the information of specific VLANs.
+
+```python
+vlan_info('10', 'DATA')
+# Output: The VLAN ID is 10 and the name of the VLAN is DATA
+```
+
