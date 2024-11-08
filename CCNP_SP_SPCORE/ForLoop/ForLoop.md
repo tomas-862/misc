@@ -1,5 +1,3 @@
-
-```markdown
 ## For Loop in Python
 
 The `for` loop allows you to iterate over a sequence (such as a list) and execute a block of code repeatedly.
@@ -47,5 +45,4 @@ for item in interfaces:
 ```
 
 In this second example, we use a `for` loop to categorize each interface based on its name. By setting conditions, we can classify the interfaces into types such as Giga, Loopback, Vlan, or Unknown, and then print the interface type for each item. This demonstrates the flexibility of the `for` loop in managing and processing network data efficiently.
-```
 
