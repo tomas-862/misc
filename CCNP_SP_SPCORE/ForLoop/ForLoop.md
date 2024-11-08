@@ -44,5 +44,5 @@ for item in interfaces:
 # Interface type of Vlan100 is Vlan
 ```
 
-In this second example, we use a `for` loop to categorize each interface based on its name. By setting conditions, we can classify the interfaces into types such as Giga, Loopback, Vlan, or Unknown, and then print the interface type for each item. This demonstrates the flexibility of the `for` loop in managing and processing network data efficiently.
+We use a `for` loop to categorize each interface based on its name. By setting conditions, we can classify the interfaces into types such as Giga, Loopback, Vlan, or Unknown, and then print the interface type for each item. This demonstrates the flexibility of the `for` loop in managing and processing network data efficiently.
 
