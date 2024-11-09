@@ -18,7 +18,8 @@ print("Connection to Router1:" + str(Check_R1))
 
 # Disconnect from the router and print the connection status.
 R1.disconnect()
-print("Connection to Router1: False") # Disconnected
+Check_R1 = R1.is_alive()
+print("Connection to Router1:" + str(Check_R1)) # Disconnected
 # Output: False
 
 ```
