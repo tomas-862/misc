@@ -21,4 +21,3 @@ def device_info(os):
 
 # Run the function (change argument as needed)
 device_info("IOS-XE")
-
