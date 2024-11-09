@@ -64,8 +64,8 @@ print(output)
 
 2. Start SSH service   
 $ sudo service ssh start   
- * Starting OpenBSD Secure Shell server sshd    
+ *Starting OpenBSD Secure Shell server sshd*
 
 3. Check SSH service status   
 $ sudo service ssh status   
- * sshd is running
+ *sshd is running*
