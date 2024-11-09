@@ -57,3 +57,15 @@ print(output)
 # description Created via PY
 # ip address 111.111.111.111 255.255.255.255
 ```
+
+
+### Start SSH server on Windows 11 (Ubuntui WSL)
+1. Start Ubuntu WSL
+
+2. Start SSH service
+$ sudo service ssh start
+ * Starting OpenBSD Secure Shell server sshd    
+
+3. Check SSH service status
+$ sudo service ssh status
+ * sshd is running
