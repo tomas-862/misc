@@ -17,6 +17,8 @@ print(f"My name is {name} and my age is {age}")  # Output the user's name and ag
 
 If we run the above script in Python, we will be prompted to provide input, and we will receive a result based on the input we supplied.
 
+
+
 With `sys.argv`, we can provide input in advance, before running the code, and our input will be processed when the code is executed.
 
 ```python
@@ -56,9 +58,11 @@ print(f"My name is {name} and my age is {age}")  # Output the name and age
 ```
 
 
+
+
 # Understanding `sys.argv` in Python
 
-When using `sys.argv` in Python, it's important to understand how command-line arguments are organized. Here's a breakdown of the indexing and how it relates to user inputs.
+When using `sys.argv` in Python, it's important to understand how command-line arguments are organized.
 
 ## Structure of `sys.argv`
 
@@ -111,5 +115,3 @@ Here’s how the indexing works when you run the script:
 - **Index 0** is reserved for the script name, while subsequent indices correspond to arguments supplied by the user.
 - This clear division allows the script to differentiate between its own name and the user inputs it processes.
 ```
-
-You can copy this content into a `.md` file, and it will be formatted properly for Markdown viewers.
