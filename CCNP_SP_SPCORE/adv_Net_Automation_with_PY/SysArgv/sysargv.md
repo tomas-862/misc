@@ -1,4 +1,3 @@
-Here's an improved version of your Markdown document regarding `sys.argv` in Python, with enhancements in grammar, style, and additional comments in the code:
 
 ### SysArgv
 
