@@ -1,8 +1,8 @@
 # Variables for personal information
 first_name = "Tomas"
 last_name = "Petr"
-height = "190 cm"
-weight = "100 kg"
+height = "1900 cm"
+weight = "1000 kg"
 eyes = "Blue"
 
 # Create a formatted string using f-string to concatenate variables
