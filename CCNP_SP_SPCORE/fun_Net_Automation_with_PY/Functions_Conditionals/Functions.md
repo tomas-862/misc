@@ -1,4 +1,3 @@
-Here is an improved version of your `.md` file with detailed explanations for each line of code:
 
 # Functions in Python
 
