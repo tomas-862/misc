@@ -1,6 +1,3 @@
-Certainly! Here's the improved version of your .md content:
-
----
 
 # User Input in Python
 
