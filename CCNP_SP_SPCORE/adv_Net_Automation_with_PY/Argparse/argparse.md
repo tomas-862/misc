@@ -1,5 +1,4 @@
 
-```markdown
 ### Argparse
 
 When using the `input` function in Python, we must run our Python script, provide input, and then the code executes based on that input.
@@ -111,4 +110,4 @@ print(result)
 # > python3 .\argparse_basic2.py 1 2 3 multiply 
 # 6
 # > 
-```
+
