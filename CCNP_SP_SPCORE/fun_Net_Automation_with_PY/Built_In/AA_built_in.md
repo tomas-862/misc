@@ -1,4 +1,3 @@
-```markdown
 # Checking Built-in Attributes and Methods of a Variable in Python
 
 In Python, we can check the built-in attributes and methods associated with a specific variable using the `dir()` command.
@@ -32,4 +31,4 @@ When you run the above code, the output will be as follows:
 ### Explanation
 
 Using the `dir()` function, you can explore the capabilities of different variable types in Python, making it a valuable tool for developers.
-```
+
