@@ -1,3 +1,7 @@
+# This Python script utilizes the Netmiko library to connect to two Cisco routers over Telnet 
+# and allows a user to execute a specified show command after validating the input.
+
+
 import sys
 from netmiko import ConnectHandler
 
