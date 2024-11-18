@@ -20,8 +20,8 @@ NOTE: Using 'TextFSM' we will have to create two files:
 
 In our example template file with name 'traceroute.template.txt' will have follow content:   
 
-**
-Value SEQ (\d+)
+
+**Value SEQ (\d+)
 Value NHOP (\S+)
 Value MSEC (\d+ msec)
 
