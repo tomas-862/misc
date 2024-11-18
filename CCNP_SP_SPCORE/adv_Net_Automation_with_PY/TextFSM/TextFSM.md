@@ -26,7 +26,7 @@ In our example template file with name 'traceroute.template.txt' will have follo
 **Value MSEC (\d+ msec)**
 
 **Start**
-  **^\s*${SEQ}\s+${NHOP}\s+${MSEC} -> Record**   
+  **^\s*${SEQ}\s+${NHOP}\s+${MSEC} -> Record**
 
 
 
