@@ -31,6 +31,8 @@ def get_version(dev):
     else:
         print("Software version not found") 
 
+
+
 # Iterate through the list of devices to call the defined functions and process each router.
 for device in devices:
     print("############################")
@@ -41,3 +43,5 @@ for device in devices:
     print("############################")
     print()
     device.disconnect()  # Disconnect from the device after processing to free up resources.
+
+
