@@ -1,5 +1,6 @@
 Value SEQ (\d+)
 Value NHOP (\S+)
+Value MSEC (\d+ msec)
 
 Start
-  ^\s*${SEQ} ${NHOP} \d+ msec
+  ^\s*${SEQ}\s+${NHOP}\s+${MSEC} -> Record
