@@ -1,0 +1,7 @@
+Value INTERFACE (\S+)           
+Value IP (\S+)                  
+Value STATUS (up|down|administratively down)  
+Value PROTOCOL (up|down)       
+
+Start
+  ^\s*${INTERFACE}\s+${IP}\s+\S+\s+\S+\s+${STATUS}\s+${PROTOCOL} -> Record
