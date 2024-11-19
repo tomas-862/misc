@@ -8,7 +8,7 @@ It might help or not to prepare for CCNP SPCORE automation sections.
   - This directory focuses on the basics of network automation.
 
 - **2_Automation_advanced_PY/**: 
-  - This directory delves into advanced network automation topics.
+  - This directory covers advanced network automation topics.
     
 ## Resources Used
 - **INE Learning Portal**:
