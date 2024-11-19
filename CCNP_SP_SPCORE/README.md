@@ -1,8 +1,7 @@
-## CCNP Service Provider Core (SP Core)
+## CCNP_SP_CORE/    
+This directory contains Markdown (.md) and Python (.py) files designed to cover key topics and concepts essential for understanding automation in networking. These resources have been used for preparation for the CCNP SP Core automation sections.
 
-Welcome to the **CCNP_SP_SPCORE** directory! Here, you'll find a collection of Markdown (.md) and Python (.py) files designed to cover key topics and concepts essential for understanding automation in networking. These resources can aid in your preparation for the CCNP SP Core automation sections.
-
-### Repository Contents
+### Directory Contents
 
 - **1_Automation_basic_PY/**:  
   This directory focuses on the basics of network automation, providing foundational knowledge and practical scripts.
@@ -13,7 +12,7 @@ Welcome to the **CCNP_SP_SPCORE** directory! Here, you'll find a collection of M
 ### Resources Used
 
 - **INE Learning Portal**:  
-  For additional learning resources, visit [ine.com](https://ine.com).
+   [ine.com](https://ine.com).
 
 - **GNS3 Simulation**:  
   GNS3 has been utilized for simulating network environments, allowing for practical testing and experimentation with network automation scripts.
