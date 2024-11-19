@@ -4,7 +4,7 @@ Welcome to my CCNP_SP_CORE_AUTOMATION repository! This directory contains the Ma
 
 ### Repository Contents
 
-- **1_Automation_basic_PY/**:  
+- **1_Automation_basics_PY/**:  
   This directory focuses on the basics of network automation, providing foundational knowledge and practical scripts.
 
 - **2_Automation_advanced_PY/**:  
