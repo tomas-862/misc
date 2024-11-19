@@ -4,7 +4,7 @@ Welcome to my CS50x repository! This directory contains the Python, SQL, HTML, J
 
 ## Course Overview
 
-HarvardX CS50x is an entry-level course taught by Harvard University that covers the fundamentals of computer science. Throughout this course, I will learn about various programming languages, algorithms, data structures, and software development practices.
+CS50x is an entry-level course taught by Harvard University that covers the fundamentals of computer science. Throughout this course, I will learn about various programming languages, algorithms, data structures, and software development practices. For more information about the course, visit the [official CS50 course page](https://pll.harvard.edu/course/cs50-introduction-computer-science).
 
 ## Repository Contents
 
