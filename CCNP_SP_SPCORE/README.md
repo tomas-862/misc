@@ -11,15 +11,9 @@ It might help or not to prepare for CCNP SPCORE automation sections.
   - This directory delves into advanced network automation topics.
     
 ## Resources Used
-- **INE Learning Portal** (ine.com)
+- **INE Learning Portal**:
+  ine.com
 
 - **AI Assistance**: 
   - This documentation and the associated Python scripts have been enhanced using the AI model GPT-4o, ensuring improved style and structure for better usability and understanding.
 
-## Getting Started
-
-To get started with the scripts:
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/username/repository.git
