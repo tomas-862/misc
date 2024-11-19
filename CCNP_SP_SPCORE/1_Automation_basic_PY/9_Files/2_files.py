@@ -3,7 +3,7 @@
 import os
 
 # Set the working directory
-os.chdir("/mnt/c/Users/tomas/OneDrive/Documents/Git/misc/CCNP_SP_SPCORE/Files")
+os.chdir("/mnt/c/Users/OneDrive/Documents/Git/misc/CCNP_SP_SPCORE/Files")
 
 # Print the current working directory
 print(os.getcwd())
