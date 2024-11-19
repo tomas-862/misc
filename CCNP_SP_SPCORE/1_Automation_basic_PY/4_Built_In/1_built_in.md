@@ -1,7 +1,6 @@
 # Checking Built-in Attributes and Methods of a Variable in Python
 
-In Python, we can check the built-in attributes and methods associated with a specific variable using the `dir()` command.
-Below is an example that demonstrates this with the integer variable `num`.
+In Python, you can inspect the built-in attributes and methods associated with a specific variable using the `dir()` function. This is useful for understanding the capabilities and properties of various data types.
 
 ## Example
 
@@ -12,7 +11,7 @@ print(dir(num))
 
 ### Output
 
-When you run the above code, the output will be as follows:
+When you run the code above, the output will look similar to the following:
 
 ```
 ['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', 
@@ -30,5 +29,4 @@ When you run the above code, the output will be as follows:
 
 ### Explanation
 
-Using the `dir()` function, you can explore the capabilities of different variable types in Python, making it a valuable tool for developers.
-
+The `dir()` function returns a list of valid attributes for the specified object. In the case of the integer variable `num`, it provides a comprehensive list of methods that can be applied to it.
