@@ -1,4 +1,3 @@
-```markdown
 # Basics of Lists in Python
 
 In Python, a list is a versatile data structure that can contain multiple data types within a single list.
