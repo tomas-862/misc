@@ -10,7 +10,7 @@ commands = [
 
 # Lab details
 lab_details = [
-    "This lab is Tomas's CCNP SP lab.",
+    "This lab is Tom CCNP SP lab.",
     'The password is "Cisco".'
 ]
 

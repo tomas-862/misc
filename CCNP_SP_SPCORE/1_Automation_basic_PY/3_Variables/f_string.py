@@ -1,7 +1,7 @@
 # Variables for personal information
-first_name = "Tomas"
-last_name = "Petr"
-height = "1900 cm"
+first_name = "Tom"
+last_name = "Tom"
+height = "1100 cm"
 weight = "1000 kg"
 eyes = "Blue Sky"
 
