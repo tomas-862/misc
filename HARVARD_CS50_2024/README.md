@@ -1,6 +1,6 @@
 # HarvardX_CS50x
 
-Welcome to my CS50x repository! This directory contains the Python, SQL, HTML, Java, and CSS files that I have created to complete assignments and projects for Harvard's CS50 Introduction to Computer Science.
+Welcome to my CS50x repository! This directory contains the Markdown, Python, SQL, HTML, Java, and CSS files that I have created to complete assignments and projects for Harvard's CS50 Introduction to Computer Science.
 
 ## Course Overview
 
