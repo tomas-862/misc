@@ -10,6 +10,9 @@ CS50x is an entry-level course taught by Harvard University that covers the fund
 
 This repository includes the following file types:
 
+- **Markdown (`.md`)**:  
+  Contains documentation files and notes related to the course.
+  
 - **Python (`.py`)**:  
   Contains scripts and assignments completed in Python.
 
