@@ -1,6 +1,6 @@
 ## CCNP Service Provider Core (SP Core)
 
-Welcome to the **spcore** directory! Here, you'll find a collection of Markdown (.md) and Python (.py) files designed to cover key topics and concepts essential for understanding automation in networking. These resources can aid in your preparation for the CCNP SP Core automation sections.
+Welcome to the **CCNP_SP_SPCORE** directory! Here, you'll find a collection of Markdown (.md) and Python (.py) files designed to cover key topics and concepts essential for understanding automation in networking. These resources can aid in your preparation for the CCNP SP Core automation sections.
 
 ### Repository Contents
 
