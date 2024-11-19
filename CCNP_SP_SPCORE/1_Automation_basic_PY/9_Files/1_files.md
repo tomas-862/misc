@@ -5,7 +5,7 @@ Change to the directory of the file and print the current location along with th
 ```python
 import os
 
-os.chdir("/mnt/c/Users/tomas/OneDrive/Documents/Git/misc/CCNP_SP_SPCORE/Files")
+os.chdir("/mnt/c/Users/OneDrive/Documents/Git/misc/CCNP_SP_SPCORE/Files")
 print(os.getcwd())
 print()
 print(os.listdir())
