@@ -4,6 +4,6 @@ The **spcore** directory contains markdown (.md) and Python (.py) files designed
 
 NOTES:   
 The **1_Automation_basic_PY** directory covers basics of network automation.  
-The **2_Automation_advanced_PY** directory covers advanced topics of network automation.
-INE portal my dot ine dot com as learning portal have been used. 
+The **2_Automation_advanced_PY** directory covers advanced topics of network automation.   
+INE portal my dot ine dot com as learning portal have been used.    
 AI model (GPT-4o) have been used to improve .md and .py work files (style, strucure).
