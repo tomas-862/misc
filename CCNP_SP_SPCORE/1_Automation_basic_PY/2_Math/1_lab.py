@@ -1,5 +1,4 @@
 # lab2.py
-# This script prints necessary commands and details for Tomas's CCNP SP lab.
 
 # Commands to display network information
 commands = [
