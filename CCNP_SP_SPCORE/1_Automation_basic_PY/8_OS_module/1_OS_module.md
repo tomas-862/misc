@@ -1,7 +1,7 @@
 ## OS Module in Python
-The OS module in Python is used to navigate and manipulate directories and files.
+The OS module in Python is used to navigate and manipulate directories and files.   
 
-To use the OS module, simply import it as follows:
+To use the OS module, simply import it as follows:   
 ```python
 import os
 ```
