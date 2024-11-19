@@ -8,7 +8,7 @@ CS50x is an entry-level course taught by Harvard University that covers the fund
 
 ## Repository Contents
 
-This repository includes the following directories and file types:
+This repository includes the following file types:
 
 - **Python (`.py`)**:  
   Contains scripts and assignments completed in Python.
