@@ -1,8 +1,35 @@
-# CS50 Problem Sets Directory
+# CS50's Introduction to Computer Science (HarvardX CS50x)
 
-## Course Description
+Welcome to my CS50x repository! This directory contains the Python, SQL, HTML, Java, and CSS files that I have created to complete assignments and projects for Harvard's CS50 Introduction to Computer Science.
 
-This is **CS50x**, Harvard University's introduction to the intellectual enterprises of computer science and the art of programming for majors and non-majors alike, with or without prior programming experience. 
+## Course Overview
 
-CS50x is an entry-level course taught by **David J. Malan** that teaches students how to think algorithmically and solve problems efficiently. 
+CS50x is an entry-level course taught by Harvard University that covers the fundamentals of computer science. Throughout this course, I will learn about various programming languages, algorithms, data structures, and software development practices.
 
+## Repository Contents
+
+This repository includes the following directories and file types:
+
+- **Python (`.py`)**:  
+  Contains scripts and assignments completed in Python.
+
+- **SQL (`.sql`)**:  
+  Includes SQL scripts for database management and queries.
+
+- **HTML (`.html`)**:  
+  Contains HTML files for web development projects.
+
+- **Java (`.java`)**:  
+  Includes Java files for assignments requiring this programming language.
+
+- **CSS (`.css`)**:  
+  Contains CSS files for styling web pages.
+
+## Getting Started
+
+To explore my work, feel free to:
+
+1. **Clone the Repository**:  
+   Use the following command to clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/username/repository.git
