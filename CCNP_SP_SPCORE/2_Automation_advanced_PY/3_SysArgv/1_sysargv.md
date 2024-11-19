@@ -2,7 +2,6 @@
 ### SysArgv
 
 When we use the `input` function in Python, we must run our Python script, provide input, and then the code executes based on our input.
-
 ```python
 # Simple example using the 'input' function
 name = input("What is your name? ")  # Prompt the user for their name
@@ -14,9 +13,7 @@ print(f"My name is {name} and my age is {age}")  # Output the user's name and ag
 # What is your age? 111
 # My name is Tom and my age is 111
 ```
-
 If we run the above script in Python, we will be prompted to provide input, and we will receive a result based on the input we supplied.
-
 
 
 With `sys.argv`, we can provide input in advance, before running the code, and our input will be processed when the code is executed.
@@ -35,7 +32,6 @@ print(f"My name is {name} and my age is {age}")  # Output the name and age
 ```
 
 We can improve the code by ensuring there are enough command-line arguments and printing an error message if the script is missing required command-line arguments.
-
 ```python
 import sys  # Import the sys module
 
@@ -56,8 +52,6 @@ print(f"My name is {name} and my age is {age}")  # Output the name and age
 # > python3 sysargv.py tom   
 # Usage: python script_name.py <name> <age>
 ```
-
-
 
 
 # Understanding `sys.argv` in Python
