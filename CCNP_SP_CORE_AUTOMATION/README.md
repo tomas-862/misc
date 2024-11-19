@@ -2,10 +2,6 @@
 
 Welcome to my **CCNP_SP_CORE_AUTOMATION** repository! This directory contains the Markdown and Python files that I have created to prepare for the CCNP SP Core Network Automation sections.
 
-## Repository Overview
-
-This repository is designed to provide you with resources for understanding network automation as part of the CCNP Service Provider Core exam preparation. You will find a combination of foundational concepts and advanced topics covered through practical examples.
-
 ### Repository Contents
 
 - **1_Automation_basics_PY/**:  
