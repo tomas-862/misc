@@ -10,19 +10,19 @@ To check the current working directory (similar to the `pwd` command in the shel
 ```python
 current_directory = os.getcwd()
 print(current_directory)
-# Example output: '/mnt/c/Users/tomas/OneDrive/Documents/Git/misc/CCNP_SP_SPCORE/OS_module_py'
+# Example output: '/CCNP_SP_SPCORE/OS_module_py'
 ```
 
 To change the directory (similar to the `cd` command), use `os.chdir()` and specify the target directory:
 ```python
-os.chdir("/mnt/c/Users/tomas/OneDrive/Documents/Git")
+os.chdir("/mnt/Documents/Git")
 print(os.getcwd())
 # Example output: '/mnt/c/Users/tomas/OneDrive/Documents/Git'
 ```
 
 To create a new directory, use `os.mkdir()`:
 ```python
-os.chdir("/mnt/c/Users/tomas/OneDrive/Documents/Git/misc/CCNP_SP_SPCORE/OS_module_py")
+os.chdir("/CCNP_SP_SPCORE/OS_module_py")
 os.mkdir("test")
 print(os.listdir())
 # Example output: ['OS_module.md', 'OS_module.py', 'test']
