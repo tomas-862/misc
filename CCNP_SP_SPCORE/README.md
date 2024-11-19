@@ -1,4 +1,4 @@
-# CCNP_SP_CORE
+# CCNP_SP_CORE_AUTOMATION
 
 Welcome to my CCNP_SP_CORE repository! This directory contains the Markdown and Python files that I have created to prepare for the CCNP SP Core Network Automation sections.
 
