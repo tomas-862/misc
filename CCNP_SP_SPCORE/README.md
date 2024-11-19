@@ -1,8 +1,8 @@
 # CCNP_SP_CORE
 
-This directory contains Markdown (.md) and Python (.py) files designed to cover key topics and concepts essential for understanding automation in networking. These resources have been used for preparation for the CCNP SP Core automation sections.
+Welcome to my CCNP_SP_CORE repository! This directory contains the Markdown and Python files that I have created to prepare for the CCNP SP Core Network Automation sections.
 
-### Directory Contents
+### Repository Contents
 
 - **1_Automation_basic_PY/**:  
   This directory focuses on the basics of network automation, providing foundational knowledge and practical scripts.
