@@ -56,3 +56,69 @@ with open(yaml_file, 'r') as file:  # Using 'with' ensures the file is closed af
 # Print the contents of the devices dictionary to the console
 print(devices)  # This will display the parsed data from the YAML file
 ```
+2. **Creating a YAML file that contains OSFP configuration** - After creating this file, we will use it in a Python script to parse the OSPF information and configure Network devices using parsed information.
+
+### YAML file with OSPF configuration
+
+```yaml
+# OSPF configuration
+ospf_configuration:
+  process_id: 1
+  networks:
+    - network: 192.168.1.0
+      mask: 0.0.0.255
+      area: 0
+    - network: 10.0.0.0
+      mask: 0.0.255.255
+      area: 0
+```
+
+### Python code to import a YAML file and send to network devices
+
+```python
+import yaml
+from netmiko import ConnectHandler
+
+# Load the OSPF configuration from the YAML file
+yaml_file = 'ospf.yaml'
+
+# Safely open and parse the YAML file, extracting the OSPF configuration
+with open(yaml_file, 'r') as file:
+    ospf_config = yaml.safe_load(file)['ospf_configuration']
+
+# Connect to the device using Netmiko with given connection details
+device = ConnectHandler(ip = "127.0.0.1", device_type = "cisco_ios_telnet", port = "5002")
+
+# Retrieve and print the current device prompt
+prompt_device = device.find_prompt()
+print(f"Current prompt: {prompt_device}")
+print()
+
+
+# Prepare OSPF configuration commands based on the YAML file
+commands = [f'router ospf {ospf_config["process_id"]}']
+for item in ospf_config['networks']:
+    commands.append(f'network {item["network"]} {item["mask"]} area {item["area"]}')
+
+
+# Apply the configuration commands to the device and print the output
+output = device.send_config_set(commands)
+print(output)
+
+# Output:
+# > python .\3_YAML_ospf.py
+# Current prompt: R1#
+#
+# configure terminal
+# Enter configuration commands, one per line.  End with CNTL/Z.
+# R1(config)#router ospf 1
+# R1(config-router)#network 192.168.1.0 0.0.0.255 area 0
+# R1(config-router)#network 10.0.0.0 0.0.255.255 area 0
+# R1(config-router)#end
+# R1#
+# PS C:\Users\tomas\OneDrive\Documents\Git\misc\CCNP_SP_CORE_AUTOMATION\2_Automation_advanced_PY\9_YAML_Jinja2>
+
+```
+
+
+
