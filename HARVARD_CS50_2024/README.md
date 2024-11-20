@@ -2,11 +2,11 @@
 
 Welcome to my CS50x repository! This directory contains the Markdown, Python, SQL, HTML, Java, and CSS files that I have created to complete assignments and projects for Harvard's CS50 Introduction to Computer Science.
 
-## Course Overview
+ **Course Overview**   
 
 CS50x is an entry-level course taught by Harvard University that covers the fundamentals of computer science. Throughout this course, I will learn about various programming languages, algorithms, data structures, and software development practices. For more information about the course, visit the [official CS50 course page](https://pll.harvard.edu/course/cs50-introduction-computer-science).
 
-## Repository Contents
+ **Repository Contents**   
 
 This repository includes the following file types:
 
@@ -28,7 +28,7 @@ This repository includes the following file types:
 - **CSS (`.css`)**:  
   Contains CSS files for styling web pages.
 
-## Getting Started
+ **Getting Started**   
 
 To explore my work, feel free to:
 
