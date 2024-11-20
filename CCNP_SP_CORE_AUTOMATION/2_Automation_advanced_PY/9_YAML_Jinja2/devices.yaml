@@ -1,0 +1,13 @@
+device_list:
+- hostname: router1
+- ip: 127.0.0.1
+- username: cisco
+- password: cisco
+- device_type: cisco_ios_telnet
+- port: 5002
+- hostname: router2
+- ip: 127.0.0.1
+- username: cisco
+- password: cisco
+- device_type: cisco_ios_telnet
+- port: 5003

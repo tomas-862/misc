@@ -17,12 +17,22 @@ We can use tags, to indicate data types (lists etc.).
 **Let’s see some examples with YAML file:**
 1. Lets create YAML file with list of device and information how to connect. After we will use this fle in PY script to parse connection inmformation to connect to devices. 
 
-YAML file
+YAML file with list of the devices.
 ```yaml
 device_list:
 - hostname: router1
 - ip: 127.0.0.1
 - username: cisco
 - password: cisco
+- device_type: cisco_ios_telnet
+- port: 5002
+- hostname: router2
+- ip: 127.0.0.1
+- username: cisco
+- password: cisco
+- device_type: cisco_ios_telnet
+- port: 5003
+```
+
 
 
