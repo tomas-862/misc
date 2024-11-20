@@ -21,11 +21,3 @@ Welcome to my **CCNP_SP_CORE_AUTOMATION** repository! This directory contains th
 - **AI Assistance:**  
   The documentation and Python scripts within this repository have been enhanced using the AI model GPT-4o, ensuring improved style and structure for better usability and comprehension.
 
-## Getting Started
-
-To use the resources in this repository, you may follow these steps:
-
-1. **Clone the Repository:**  
-   Use the following command to clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/username/repository.git
