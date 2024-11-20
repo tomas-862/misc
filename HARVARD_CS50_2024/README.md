@@ -28,11 +28,3 @@ This repository includes the following file types:
 - **CSS (`.css`)**:  
   Contains CSS files for styling web pages.
 
- **Getting Started**   
-
-To explore, feel free to:
-
-1. **Clone the Repository**:  
-   Use the following command to clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/username/repository.git
