@@ -1,38 +1,58 @@
-# YAML
-- YAML is file format which are human readable format, you don’t need programming skills to understand and or update YAML file.   
+## YAML
 
-- All high level programming languages like Python, Pear etc. can read and understand YAML file. In PY I can import YAML module in PY, then call YAML file in Python e.g. instead of having hundreds of devices usernames and password in PY script, I can have it in YAML file and call it whenever it needed.   
+- YAML (YAML Ain't Markup Language) is a human-readable data serialization format. You don’t need programming skills to understand or update a YAML file.
 
-- YAML file format have many similarity with JSON but includes features which makes YAML file more readable and writable for humans. As JSON format print out is user friendly, but JSON script is not so easy to understand without programming knowledge.   
+- Many high-level programming languages, such as Python, Perl, etc., can read and understand YAML files. In Python, you can import the YAML module to load a YAML file. This way, instead of embedding hundreds of device usernames and passwords in a Python script, you can store them in a YAML file and call them whenever needed.
 
-- YAML format is excellent choice for configuration files and documentation where human interaction is needed.   
+- The YAML format has many similarities with JSON but offers features that make it more readable and writable for humans. While JSON is user-friendly in terms of output, its syntax can be less intuitive without programming knowledge.
 
-- YAML is compatible with many languages i.e. cross language compatibility.   
+- YAML is an excellent choice for configuration files and documentation where human interaction is necessary.
 
-- YAML is hierarchical format, tree-like manner.   
+- YAML is compatible with many programming languages, providing cross-language compatibility.
 
-We can use tags, to indicate data types (lists etc.).   
-- YAML supports comments (unlike JSON).   
+- YAML structures data hierarchically, in a tree-like manner.
 
-**Let’s see some examples with YAML file:**
-1. Lets create YAML file with list of device and information how to connect. After we will use this fle in PY script to parse connection inmformation to connect to devices. 
+- You can use tags in YAML to indicate data types (e.g., lists).
 
-YAML file with list of the devices.
+- YAML supports comments, which is not possible in JSON.
+
+**Let’s see some examples using a YAML file:**
+
+1. **Creating a YAML file with a list of devices and connection information** - After creating this file, we will use it in a Python script to parse the connection information for connecting to devices.
+
+### YAML file with a list of devices
+
 ```yaml
+# List of devices
 device_list:
-- hostname: router1
-- ip: 127.0.0.1
-- username: cisco
-- password: cisco
-- device_type: cisco_ios_telnet
-- port: 5002
-- hostname: router2
-- ip: 127.0.0.1
-- username: cisco
-- password: cisco
-- device_type: cisco_ios_telnet
-- port: 5003
+  - hostname: router1
+    ip: 127.0.0.1
+    username: cisco
+    password: cisco
+    device_type: cisco_ios_telnet
+    port: 5002
+  - hostname: router2
+    ip: 127.0.0.1
+    username: cisco
+    password: cisco
+    device_type: cisco_ios_telnet
+    port: 5003
 ```
 
+### Python code to import a YAML file and print its contents as a Python dictionary
 
+```python
+# Import the YAML module for parsing YAML files
+import yaml
 
+# Define the path to the YAML file containing device information
+yaml_file = 'devices.yaml'  # This variable holds the filename of the YAML file
+
+# Open the specified YAML file in read mode
+with open(yaml_file, 'r') as file:  # Using 'with' ensures the file is closed after reading
+    # Load the contents of the YAML file safely and convert it into a Python dictionary
+    devices = yaml.safe_load(file)  # safe_load is used to prevent the execution of any arbitrary code in the YAML
+
+# Print the contents of the devices dictionary to the console
+print(devices)  # This will display the parsed data from the YAML file
+```
