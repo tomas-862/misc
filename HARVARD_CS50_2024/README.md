@@ -30,7 +30,7 @@ This repository includes the following file types:
 
  **Getting Started**   
 
-To explore my work, feel free to:
+To explore, feel free to:
 
 1. **Clone the Repository**:  
    Use the following command to clone the repository to your local machine:
