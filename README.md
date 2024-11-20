@@ -1,4 +1,4 @@
-# Repository Contents:
+**Repository Contents**:   
 
    - **CCNP_SP_CORE_AUTOMATION**   
 This directory contains the Markdown and Python files that I have created to prepare for the CCNP SP Core Network Automation sections.
