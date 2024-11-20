@@ -1,5 +1,4 @@
 
-```markdown
 # Data Models Specialized for Network Engineers
 
 ## Introduction
@@ -70,5 +69,3 @@ Data models describe things in a clear and consistent way. They define how data 
        ]
    }
    ```
-
-```
