@@ -12,6 +12,7 @@ Welcome to my **CCNP_SP_CORE_AUTOMATION** repository! This directory contains th
 
 - **3_Automation_YANG_NETCONF_RESTCONF/**:   
   This directory contains .md files about Data models, YANG, NETCONF and RESCONF fundamentals.
+  
 
  **Resources Used:**
 
