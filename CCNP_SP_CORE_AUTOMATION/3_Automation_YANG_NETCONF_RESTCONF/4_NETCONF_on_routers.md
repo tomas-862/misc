@@ -126,23 +126,33 @@ While XML is structured and machine-readable, it may not always be user-friendly
 
 ## NETCONF Protocol Stack
 NETCONF has its own protocol stack that facilitates various operations:
-- **Content**: XML (primarily using YANG)
-- **Operations**: `<get>`, `<validate>`, `<get-config>`, `<lock>`, `<unlock>`, `<delete-config>`, and others.
-- **Protocol**: SSHv2 (primarily), SOAP, TLS
 
-## What NETCONF Does:
-NETCONF provides several key functionalities:
-- Status Collection: Collects the status of specific fields from network devices to monitor their performance and health.
-- Configuration Management: Changes the configuration of specific fields on devices, allowing for efficient updates and modifications.
-- Administrative Actions: Facilitates various administrative tasks such as enabling or disabling interfaces and adjusting operational parameters.
-- Event Notifications and Streaming Communication: Sends event notifications and provides streaming communication capabilities. Unlike SNMP, which relies on polling and traps, NETCONF supports continuous status updates, ensuring real-time monitoring.
-- Backup and Restore Configuration: Allows for backing up the current configuration and restoring it when necessary, providing redundancy and disaster recovery capabilities.
-- Configuration Testing: Enables testing proposed configurations before applying them to ensure they do not conflict with existing settings, enhancing operational stability.
+| Layer         | Description                                                                                  |
+|---------------|----------------------------------------------------------------------------------------------|
+| **Content**   | XML (primarily using YANG)                                                                  |
+| **Operations**| `<get>`, `<validate>`, `<get-config>`, `<lock>`, `<unlock>`, `<delete-config>`, and others.|
+| **Protocol**  | SSHv2 (primarily), SOAP, TLS                                       
 
-## NETCONF Terminology: 
-- NETCONF Agent: running on routers, switches, and other NETCONF-capable devices that responds to NETCONF operations.
-- NETCONF Manager: A Network Management System (NMS) used by administrators to interact with NETCONF agents.
-- Datastore: Databases or tables of stored data managed by the NETCONF agent. These serve as the target for NETCONF commands, which are sent as Remote Procedure Call (RPC) messages.
+
+## What NETCONF Does
+| Functionality                                  | Description                                                                                                             |
+|------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| **Status Collection**                          | Collects the status of specific fields from network devices to monitor their performance and health.                   |
+| **Configuration Management**                   | Changes the configuration of specific fields on devices, allowing for efficient updates and modifications.              |
+| **Administrative Actions**                     | Facilitates various administrative tasks such as enabling or disabling interfaces and adjusting operational parameters.  |
+| **Event Notifications and Streaming Communication** | Sends event notifications and provides streaming communication capabilities. Unlike SNMP, NETCONF supports continuous status updates for real-time monitoring. |
+| **Backup and Restore Configuration**           | Allows for backing up the current configuration and restoring it when necessary, providing redundancy and disaster recovery capabilities. |
+| **Configuration Testing**                      | Enables testing proposed configurations before applying them to ensure they do not conflict with existing settings, enhancing operational stability. |
+
+
+## NETCONF Terminology
+
+| Term               | Description                                                                                                          |
+|--------------------|----------------------------------------------------------------------------------------------------------------------|
+| **NETCONF Agent**  | Software running on routers, switches, and other NETCONF-capable devices that responds to NETCONF operations.        |
+| **NETCONF Manager**| A Network Management System (NMS) used by administrators to interact with NETCONF agents.                           |
+| **Datastore**      | Databases or tables of stored data managed by the NETCONF agent. These serve as the target for NETCONF commands, which are sent as Remote Procedure Call (RPC) messages. |
+
 
 ## Common NETCONF Datastores are <running><startup><candidate>:
 - Holds the configuration of the device.
