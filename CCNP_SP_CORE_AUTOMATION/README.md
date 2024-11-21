@@ -5,10 +5,13 @@ Welcome to my **CCNP_SP_CORE_AUTOMATION** repository! This directory contains th
  **Repository Contents:**
 
 - **1_Automation_basics_PY/**:  
-  This directory focuses on the fundamentals of network automation. It includes practical scripts and foundational knowledge to get you started.
+  This directory focuses on the fundamentals of network automation. It includes practical scripts and foundational knowledge.
 
 - **2_Automation_advanced_PY/**:  
   This directory delves into more advanced network automation topics, offering complex scripts and in-depth concepts for a deeper understanding.
+
+- **3_Automation_YANG_NETCONF_RESTCONF/**:   
+  This directory contains .md files about Data models, YANG, NETCONF and RESCONF fundamentals.
 
  **Resources Used:**
 
