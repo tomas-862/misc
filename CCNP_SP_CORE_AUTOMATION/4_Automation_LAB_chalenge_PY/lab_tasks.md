@@ -2,7 +2,7 @@
 
 All routers have been pre-configured with IPv4 addressing and OSPFv2. To access the python interpreter, minimize the GNS3 application and open the terminal from the desktop. You may use ATOM as an editor for creating your scripts. All scripts should be stored in the pre-created folder "/root/Scripts". As a network engineer for INE, you have been assigned to automate the following tasks:
 
-1. Create a script with the file name as Lab1.py which prints the following:
+1. Create a script with the file name as *Lab1.py* which prints the following:
 
 ```code
 show ip interface brief
@@ -11,7 +11,7 @@ The password is "cisco"
 This lab belongs to Rohit's class
 ```
 
-Create a script with the file name as Lab2.py. Create a string variables named ccie1 which has the string value as CCIE EI. Create a string variables named ccie2 which has the string value as CCIE SP. Create a string variables named ccie3 which has the string value as CCIE SEC. Create a string variables named ccie4 which has the string value as CCIE DC. Create a integer type variables named ei which has the integer value as 40000. Create a integer type variables named sp which has the integer value as 10000. Create a integer type variables named sec which has the integer value as 15000. Create a integer type variables named dc which has the integer value as 5000. Print "There are 40000 CCIE EI certified people in the world". Print "There are 10000 CCIE SP certified people in the world". Print "There are 15000 CCIE SEC certified people in the world". Print "There are 5000 CCIE DC certified people in the world". Print "There are 70000 CCIE's in the world". Use the Format string feature to achieve this.
+2. Create a script with the file name as *Lab2.py*. Create a string variables named ccie1 which has the string value as CCIE EI. Create a string variables named ccie2 which has the string value as CCIE SP. Create a string variables named ccie3 which has the string value as CCIE SEC. Create a string variables named ccie4 which has the string value as CCIE DC. Create a integer type variables named ei which has the integer value as 40000. Create a integer type variables named sp which has the integer value as 10000. Create a integer type variables named sec which has the integer value as 15000. Create a integer type variables named dc which has the integer value as 5000. Print "There are 40000 CCIE EI certified people in the world". Print "There are 10000 CCIE SP certified people in the world". Print "There are 15000 CCIE SEC certified people in the world". Print "There are 5000 CCIE DC certified people in the world". Print "There are 70000 CCIE's in the world". Use the Format string feature to achieve this.
 
 Create a script with the file name as Lab3.py. Create a string variables named old_ip_address1 which has the string value as 192.168.100.100. Create a string variables named old_ip_address2 which has the string value as 192.168.200.200. Use the split and replace built-in methods and replace all occurrences of .100 with .254. Use the split and replace built-in methods and replace the first occurrence of 200 with .254. Once the IP addresses are modified, print the following:
 
