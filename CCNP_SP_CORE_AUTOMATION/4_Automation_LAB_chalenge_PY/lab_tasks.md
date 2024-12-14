@@ -8,7 +8,7 @@ All routers have been pre-configured with IPv4 addressing and OSPFv2. To access 
 show ip interface brief
 show ip route | include 192.168.1.0
 The password is "cisco"
-This lab belongs to Rohit's class
+This lab belongs to rome's class
 ```
 
 2. Create a script with the file name as **Lab2.py**. Create a string variables named ccie1 which has the string value as CCIE EI. Create a string variables named ccie2 which has the string value as CCIE SP. Create a string variables named ccie3 which has the string value as CCIE SEC. Create a string variables named ccie4 which has the string value as CCIE DC. Create a integer type variables named ei which has the integer value as 40000. Create a integer type variables named sp which has the integer value as 10000. Create a integer type variables named sec which has the integer value as 15000. Create a integer type variables named dc which has the integer value as 5000. Print "There are 40000 CCIE EI certified people in the world". Print "There are 10000 CCIE SP certified people in the world". Print "There are 15000 CCIE SEC certified people in the world". Print "There are 5000 CCIE DC certified people in the world". Print "There are 70000 CCIE's in the world". Use the Format string feature to achieve this.

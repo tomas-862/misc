@@ -10,4 +10,4 @@
 print ('show ip interface brief')
 print ('show ip route | include 192.168.1.0')
 print ('The password is "cisco"')
-print ("This lab belongs to Rohit's class")
+print ("This lab belongs to rome's class")
