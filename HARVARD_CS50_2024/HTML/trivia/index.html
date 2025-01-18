@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            function checkAnswer(button, isCorrect) {
+                const responseElement = document.getElementById("mc-response");
+                if (isCorrect) {
+                    button.classList.add("correct");
+                    responseElement.innerText = "Correct!";
+                } else {
+                    button.classList.add("incorrect");
+                    responseElement.innerText = "Incorrect";
+                }
+            }
+
+            function checkTextAnswer() {
+                const answerInput = document.getElementById("textAnswer");
+                const textResponseElement = document.getElementById("text-response");
+                const userAnswer = answerInput.value.trim();
+
+                if (userAnswer === "4") {
+                    answerInput.classList.add("correct");
+                    textResponseElement.innerText = "Correct!";
+                } else {
+                    answerInput.classList.add("incorrect");
+                    textResponseElement.innerText = "Incorrect";
+                }
+            }
+        </script>
+        <style>
+            body {
+                font-family: 'Montserrat', sans-serif;
+                margin: 20px;
+            }
+            button {
+                margin: 5px;
+                padding: 10px;
+                cursor: pointer;
+            }
+            .correct {
+                background-color: green;
+                color: white;
+            }
+            .incorrect {
+                background-color: red;
+                color: white;
+            }
+            #mc-response, #text-response {
+                margin-top: 10px;
+                font-weight: bold;
+            }
+            .response-input {
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What is the capital of Lithuania?</h3>
+                <button onclick="checkAnswer(this, false)">Stockholm</button>
+                <button onclick="checkAnswer(this, false)">Riga</button>
+                <button onclick="checkAnswer(this, true)">Vilnius</button>
+                <div id="mc-response"></div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Multiple Choice </h2>
+                <hr>
+                <h3>What country consumes the most chocolate per capita? ?</h3>
+                <button onclick="checkAnswer(this, false)">Japan</button>
+                <button onclick="checkAnswer(this, false)">France</button>
+                <button onclick="checkAnswer(this, true)">Switzerland</button>
+                <div id="mc-response"></div>
+            </div>
+
+            <div class="section">
+                <h2>Part 3: Free Response</h2>
+                <hr>
+                <h3>What is 2 + 2?</h3>
+                <input type="text" id="textAnswer" class="response-input" placeholder="Type your answer here">
+                <button onclick="checkTextAnswer()">Confirm Answer</button>
+                <div id="text-response"></div>
+            </div>
+        </div>
+    </body>
+</html>
