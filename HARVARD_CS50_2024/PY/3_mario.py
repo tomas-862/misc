@@ -22,5 +22,3 @@ while counter < x:
     print(" "*(x - 1 - counter) + "#"*(counter + 1))
     counter += 1
 
-
-
