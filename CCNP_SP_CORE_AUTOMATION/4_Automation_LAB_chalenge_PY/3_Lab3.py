@@ -21,4 +21,3 @@ updated_ip_address2 = temp_ip_address2.split(".")
 
 print(f"The old IP addresses are {old_ip_address1} and {old_ip_address2}")
 print(f"The new IP addresses are {updated_ip_address1} and {updated_ip_address2}")
-
