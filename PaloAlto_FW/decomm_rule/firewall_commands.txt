@@ -1,11 +1,82 @@
 set device-group DMZ1 post-rulebase security rules rule1 tag RFC1111111_decomm
 set device-group DMZ2_Azure post-rulebase security rules rule2 tag RFC1111111_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule3 tag RFC1111112_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule4 tag RFC1111113_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule5 tag RFC1111114_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule6 tag RFC1111115_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule7 tag RFC1111116_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule8 tag RFC1111117_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule9 tag RFC1111118_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule10 tag RFC1111119_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule11 tag RFC1111120_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule12 tag RFC1111121_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule13 tag RFC1111122_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule14 tag RFC1111123_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule15 tag RFC1111124_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule16 tag RFC1111125_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule17 tag RFC1111126_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule18 tag RFC1111127_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule19 tag RFC1111128_decomm
 
 set device-group DMZ1 post-rulebase security rules rule1 description "RFC1111111 / 29.06.2025 ab"
 set device-group DMZ2_Azure post-rulebase security rules rule2 description "RFC1111111 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule3 description "RFC1111112 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule4 description "RFC1111113 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule5 description "RFC1111114 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule6 description "RFC1111115 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule7 description "RFC1111116 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule8 description "RFC1111117 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule9 description "RFC1111118 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule10 description "RFC1111119 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule11 description "RFC1111120 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule12 description "RFC1111121 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule13 description "RFC1111122 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule14 description "RFC1111123 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule15 description "RFC1111124 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule16 description "RFC1111125 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule17 description "RFC1111126 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule18 description "RFC1111127 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule19 description "RFC1111128 / 29.06.2025 ab"
 
 set device-group DMZ1 post-rulebase security rules rule1 disable yes
 set device-group DMZ2_Azure post-rulebase security rules rule2 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule3 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule4 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule5 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule6 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule7 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule8 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule9 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule10 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule11 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule12 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule13 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule14 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule15 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule16 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule17 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule18 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule19 disable yes
 
 move device-group DMZ1 rulebase security rules rule1 bottom
 move device-group DMZ2_Azure rulebase security rules rule2 bottom
+move device-group DMZ2_Azure rulebase security rules rule3 bottom
+move device-group DMZ2_Azure rulebase security rules rule4 bottom
+move device-group DMZ2_Azure rulebase security rules rule5 bottom
+move device-group DMZ2_Azure rulebase security rules rule6 bottom
+move device-group DMZ2_Azure rulebase security rules rule7 bottom
+move device-group DMZ2_Azure rulebase security rules rule8 bottom
+move device-group DMZ2_Azure rulebase security rules rule9 bottom
+move device-group DMZ2_Azure rulebase security rules rule10 bottom
+move device-group DMZ2_Azure rulebase security rules rule11 bottom
+move device-group DMZ2_Azure rulebase security rules rule12 bottom
+move device-group DMZ2_Azure rulebase security rules rule13 bottom
+move device-group DMZ2_Azure rulebase security rules rule14 bottom
+move device-group DMZ2_Azure rulebase security rules rule15 bottom
+move device-group DMZ2_Azure rulebase security rules rule16 bottom
+move device-group DMZ2_Azure rulebase security rules rule17 bottom
+move device-group DMZ2_Azure rulebase security rules rule18 bottom
+move device-group DMZ2_Azure rulebase security rules rule19 bottom
+
+
+
