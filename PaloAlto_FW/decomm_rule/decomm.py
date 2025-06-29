@@ -1,60 +1,79 @@
-import csv
+import openpyxl
 import datetime
 
-# Input CSV filename
-INPUT_CSV = 'rules_to_decommission.csv'
+# Input Excel filename
+INPUT_EXCEL = 'rules_to_decommission.xlsx'
 # Output TXT filename with CLI commands
 OUTPUT_TXT = 'firewall_commands.txt'
 
-# Read the CSV file
-with open(INPUT_CSV, 'r', newline='') as csvfile:
-    reader = csv.DictReader(csvfile)
-    rules = [row for row in reader]
+# Load workbook and select active sheet
+wb = openpyxl.load_workbook(INPUT_EXCEL)
+sheet = wb.active  # Change if needed, e.g., wb['Sheet1']
 
-# Get current date for description
-current_date = datetime.date.today().strftime('%d-%m-%Y')
+# Read headers to map columns
+header = {}
+for col in range(1, sheet.max_column + 1):
+    cell_value = sheet.cell(row=1, column=col).value
+    if cell_value:
+        header[cell_value.strip().lower()] = col
 
-commands = []
+# Read rules data
+rules = []
+for row in range(2, sheet.max_row + 1):
+    rules.append({
+        'vsys': sheet.cell(row, header['vsys']).value,
+        'rule_name': sheet.cell(row, header['rule_name']).value,
+        'change_name': sheet.cell(row, header['change_name']).value,
+        'implementer': sheet.cell(row, header['implementer']).value,
+    })
 
+# Get current date in dd.mm.YYYY format
+current_date = datetime.date.today().strftime('%d.%m.%Y')
+
+# Prepare command lists by type
+tag_commands = []
+description_commands = []
+disable_commands = []
+move_bottom_commands = []
+
+# Process each rule
 for rule in rules:
-    vsys = rule['vsys'].strip()
-    rule_name = rule['rule_name'].strip()
-    change_name = rule['change_name'].strip()
-    implementer = rule['implementer'].strip()
+    vsys = str(rule['vsys']).strip() if rule['vsys'] else ''
+    rule_name = str(rule['rule_name']).strip() if rule['rule_name'] else ''
+    change_name = str(rule['change_name']).strip() if rule['change_name'] else ''
+    implementer = str(rule['implementer']).strip() if rule['implementer'] else ''
 
-    description = f"Change: {change_name}\nDate: {current_date}\nImplementer: {implementer}"
+    # Skip rules with empty rule_name
+    if not rule_name:
+        continue
 
-    # Commands
-    # 1. Add tag - assuming using the 'tag' command if available (or skip if not)
-    # For simplicity, assuming tags are added via 'set rule ... tag ...'
-    # Note: Actual syntax depends on the device's CLI syntax
+    # Default values if change_name or implementer is missing
+    if not change_name:
+        change_name = "NoChange"
+    if not implementer:
+        implementer = "Unknown"
 
-    # Example: Add tag (may need adjustment)
-    cmd_add_tag = f"set rulebase security rules \"{rule_name}\" tag \"{change_name}\""
-    commands.append(f"# Vsys: {vsys}, Rule: {rule_name}")
-    commands.append(cmd_add_tag)
+    # Generate description
+    description = f"{change_name} / {current_date} {implementer}"
 
-    # 2. Update description
-    cmd_update_desc = f"set rulebase security rules \"{rule_name}\" description \"{description}\""
-    commands.append(cmd_update_desc)
+    # 1. Add tag command (with vsys)
+    tag_commands.append(f"set device-group {vsys} post-rulebase security rules {rule_name} tag {change_name}_decomm")
 
-    # 3. Disable the rule
-    cmd_disable = f"set rulebase security rules \"{rule_name}\" disable yes"
-    commands.append(cmd_disable)
+    # 2. Update description (with vsys)
+    description_commands.append(f"set device-group {vsys} post-rulebase security rules {rule_name} description \"{description}\"")
 
-    # 4. Move rule to bottom
-    # There is no direct CLI command for 'move to bottom', but one way is to delete and re-add at bottom
-    # Or use 'move' command if available
-    # Example (assuming move command):
-    # move command placeholder
-    cmd_move_bottom = f"move rulebase security rules \"{rule_name}\" bottom"
-    commands.append(cmd_move_bottom)
+    # 3. Disable the rule (with vsys)
+    disable_commands.append(f"set device-group {vsys} post-rulebase security rules {rule_name} disable yes")
 
-    commands.append('')  # blank line for readability
+    # 4. Move rule to bottom (with vsys)
+    move_bottom_commands.append(f"move device-group {vsys} rulebase security rules {rule_name} bottom")
+
+# Combine all commands in the desired order (tag, description, disable, move bottom)
+all_commands = tag_commands + [''] + description_commands + [''] + disable_commands + [''] + move_bottom_commands
 
 # Write all commands to output file
 with open(OUTPUT_TXT, 'w') as outfile:
-    for line in commands:
+    for line in all_commands:
         outfile.write(line + '\n')
 
-print(f"CLI commands have been written to {OUTPUT_TXT}")
+print(f"Commands written to {OUTPUT_TXT}")

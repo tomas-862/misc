@@ -1,0 +1,11 @@
+set device-group DMZ1 post-rulebase security rules rule1 tag RFC1111111_decomm
+set device-group DMZ2_Azure post-rulebase security rules rule2 tag RFC1111111_decomm
+
+set device-group DMZ1 post-rulebase security rules rule1 description "RFC1111111 / 29.06.2025 ab"
+set device-group DMZ2_Azure post-rulebase security rules rule2 description "RFC1111111 / 29.06.2025 ab"
+
+set device-group DMZ1 post-rulebase security rules rule1 disable yes
+set device-group DMZ2_Azure post-rulebase security rules rule2 disable yes
+
+move device-group DMZ1 rulebase security rules rule1 bottom
+move device-group DMZ2_Azure rulebase security rules rule2 bottom
