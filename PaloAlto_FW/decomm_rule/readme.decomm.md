@@ -12,11 +12,6 @@ This Python script automates the process of decommissioning security rules in Pa
   - Moving the rule to the bottom of the rulebase.
 - **Output File**: Writes the generated CLI commands to a text file (`firewall_commands.txt`).
 
-## Prerequisites
-
-- **Python 3.x**
-- **openpyxl library** (install via `pip install openpyxl`)
-
 ## Usage
 
 ### 1. Prepare the Input Excel File:
