@@ -1,23 +1,23 @@
 import openpyxl
 import datetime
+import re
 
-# Input Excel filename
+# Input / output filenames
 INPUT_EXCEL = 'rules_to_decommission.xlsx'
-# Output TXT filename with CLI commands
 OUTPUT_TXT = 'firewall_commands.txt'
 
-# Load workbook and select active sheet
+# Load workbook and pick active sheet
 wb = openpyxl.load_workbook(INPUT_EXCEL)
-sheet = wb.active  # Change if needed, e.g., wb['Sheet1']
+sheet = wb.active
 
-# Read headers to map columns
+# Map header names (lowercase) to column indices
 header = {}
 for col in range(1, sheet.max_column + 1):
-    cell_value = sheet.cell(row=1, column=col).value
-    if cell_value:
-        header[cell_value.strip().lower()] = col
+    cell_val = sheet.cell(row=1, column=col).value
+    if cell_val is not None:
+        header[cell_val.strip().lower()] = col
 
-# Read rules data
+# Read rule entries
 rules = []
 for row in range(2, sheet.max_row + 1):
     rules.append({
@@ -27,53 +27,100 @@ for row in range(2, sheet.max_row + 1):
         'implementer': sheet.cell(row, header['implementer']).value,
     })
 
-# Get current date in dd.mm.YYYY format
+# Current date in dd.mm.YYYY
 current_date = datetime.date.today().strftime('%d.%m.%Y')
 
-# Prepare command lists by type
-tag_commands = []
-description_commands = []
-disable_commands = []
-move_bottom_commands = []
+# Containers for commands
+tag_cmds = []
+desc_cmds = []
+disable_cmds = []
+move_cmds = []
 
-# Process each rule
+def build_cmd(parts):
+    """
+    Join the parts list with a single space, drop any empty parts,
+    and collapse runs of multiple spaces into a single space.
+    """
+    # Drop empty or None parts
+    parts = [p for p in parts if p]
+    # Join with single spaces
+    cmd = " ".join(parts)
+    # Collapse multiple spaces just in case
+    cmd = re.sub(r" {2,}", " ", cmd)
+    return cmd
+
 for rule in rules:
-    vsys = str(rule['vsys']).strip() if rule['vsys'] else ''
-    rule_name = str(rule['rule_name']).strip() if rule['rule_name'] else ''
-    change_name = str(rule['change_name']).strip() if rule['change_name'] else ''
-    implementer = str(rule['implementer']).strip() if rule['implementer'] else ''
+    vsys = rule.get('vsys')
+    rule_name = rule.get('rule_name')
+    change_name = rule.get('change_name')
+    implementer = rule.get('implementer')
 
-    # Skip rules with empty rule_name
+    # Convert to string and strip whitespace
+    vsys = (str(vsys) if vsys is not None else "").strip()
+    rule_name = (str(rule_name) if rule_name is not None else "").strip()
+    change_name = (str(change_name) if change_name is not None else "").strip()
+    implementer = (str(implementer) if implementer is not None else "").strip()
+
+    # Debug print to inspect contents (optional)
+    print("DEBUG vsys:", repr(vsys),
+          "rule_name:", repr(rule_name),
+          "change_name:", repr(change_name),
+          "implementer:", repr(implementer))
+
+    # Skip if rule_name is empty
     if not rule_name:
         continue
 
-    # Default values if change_name or implementer is missing
+    # Defaults
     if not change_name:
         change_name = "NoChange"
     if not implementer:
         implementer = "Unknown"
 
-    # Generate description
     description = f"{change_name} / {current_date} {implementer}"
 
-    # 1. Add tag command (with vsys)
-    tag_commands.append(f"set device-group {vsys} post-rulebase security rules {rule_name} tag {change_name}_decomm")
+    # Build tag command
+    tag_cmds.append(build_cmd([
+        "set", "device-group", vsys,
+        "post-rulebase", "security", "rules", rule_name,
+        "tag", f"{change_name}_decomm"
+    ]))
 
-    # 2. Update description (with vsys)
-    description_commands.append(f"set device-group {vsys} post-rulebase security rules {rule_name} description \"{description}\"")
+    # Build description command
+    desc_cmds.append(build_cmd([
+        "set", "device-group", vsys,
+        "post-rulebase", "security", "rules", rule_name,
+        "description", f"\"{description}\""
+    ]))
 
-    # 3. Disable the rule (with vsys)
-    disable_commands.append(f"set device-group {vsys} post-rulebase security rules {rule_name} disable yes")
+    # Build disable command
+    disable_cmds.append(build_cmd([
+        "set", "device-group", vsys,
+        "post-rulebase", "security", "rules", rule_name,
+        "disable", "yes"
+    ]))
 
-    # 4. Move rule to bottom (with vsys)
-    move_bottom_commands.append(f"move device-group {vsys} rulebase security rules {rule_name} bottom")
+    # Build move command
+    move_cmds.append(build_cmd([
+        "move", "device-group", vsys,
+        "rulebase", "security", "rules", rule_name,
+        "bottom"
+    ]))
 
-# Combine all commands in the desired order (tag, description, disable, move bottom)
-all_commands = tag_commands + [''] + description_commands + [''] + disable_commands + [''] + move_bottom_commands
+# Combine all the commands with blank lines between the groups
+all_cmds = (
+    tag_cmds +
+    [""] +
+    desc_cmds +
+    [""] +
+    disable_cmds +
+    [""] +
+    move_cmds
+)
 
-# Write all commands to output file
-with open(OUTPUT_TXT, 'w') as outfile:
-    for line in all_commands:
-        outfile.write(line + '\n')
+# Write to output file
+with open(OUTPUT_TXT, 'w') as outf:
+    for ln in all_cmds:
+        outf.write(ln + "\n")
 
 print(f"Commands written to {OUTPUT_TXT}")
