@@ -8,3 +8,6 @@ This directory contains the Python, SQL, HTML, Java, and CSS files created to co
 
 - **PaloAlto_FW_decomm**  
 This directory contains the Python script created to automate the decommissioning of security rules in Palo Alto Panorama.
+
+- **DE**  
+This directory contains the Python scripts and Markdown files created for German language learning, including verb conjugations and nouns in nominative and accusative cases.
