@@ -17,11 +17,11 @@ audio_segments = []
 pause_short = AudioSegment.silent(duration=1100)
 pause_medium = AudioSegment.silent(duration=2500)
 pause_long = AudioSegment.silent(duration=4200)
+pause_recall = AudioSegment.silent(duration=3000)
 
 
-def generate_tts(text, lang):
-    """Generate speech for a given text and return it as an AudioSegment."""
-    tts = gTTS(text=text, lang=lang)
+def generate_tts(text, lang, slow=False):
+    tts = gTTS(text=text, lang=lang, slow=slow)
     tts.save(TEMP_FILE)
     return AudioSegment.from_mp3(TEMP_FILE)
 
@@ -31,13 +31,31 @@ def add_spoken(text, lang, pause=pause_short):
     audio_segments.append(pause)
 
 
-def add_learning_pair(lithuanian, german, repeats=3):
-    add_spoken(lithuanian, "lt", pause_medium)
+def add_learning_pair(lithuanian, german, repeats=2, partizip_form=None):
+    if partizip_form:
+        add_spoken(f"Partizip zwei: {partizip_form}", "lt", pause_short)
+        for form in partizip_form.split(", "):
+            form_audio = generate_tts(form.strip(), "de", slow=True)
+            audio_segments.append(form_audio)
+            audio_segments.append(pause_short)
+    add_spoken(lithuanian, "lt", pause_recall)
     german_audio = generate_tts(german, "de")
-
     for _ in range(repeats):
         audio_segments.append(german_audio)
+        audio_segments.append(pause_medium)
+
+
+def add_partizip_note(lithuanian, german, form):
+    for f in form.split(", "):
+        form_audio = generate_tts(f.strip(), "de", slow=True)
+        audio_segments.append(form_audio)
         audio_segments.append(pause_short)
+    add_spoken(lithuanian, "lt", pause_short)
+    german_audio = generate_tts(german, "de")
+    audio_segments.append(german_audio)
+    audio_segments.append(pause_medium)
+    audio_segments.append(german_audio)
+    audio_segments.append(pause_medium)
 
 
 def add_section(title):
@@ -46,10 +64,27 @@ def add_section(title):
 
 def add_full_story(repeats=2):
     story_audio = generate_tts(full_story_german, "de")
-
     for _ in range(repeats):
         audio_segments.append(story_audio)
         audio_segments.append(pause_long)
+
+
+def add_annotated_story():
+    for sentence, partizip in story_sentences_annotated:
+        add_spoken(sentence, "de", pause_short)
+        if partizip:
+            add_spoken(f"Partizip zwei: {partizip}", "lt", pause_short)
+            for form in partizip.split(", "):
+                form_audio = generate_tts(form.strip(), "de", slow=True)
+                audio_segments.append(form_audio)
+                audio_segments.append(pause_short)
+            audio_segments.append(pause_medium)
+
+
+def add_comprehension_test():
+    for lithuanian, german in story_pairs:
+        add_spoken(german, "de", AudioSegment.silent(duration=4000))
+        add_spoken(lithuanian, "lt", pause_medium)
 
 
 # ===== STORY =====
@@ -142,36 +177,134 @@ story_pairs = [
     ("Tomas.", "Tomas"),
 ]
 
+sentence_partizip_map = {
+    "Die Zeit ist sehr schnell vergangen!": "vergangen",
+    "Ich habe jeden Tag Ski gefahren und das Wetter war super.": "gefahren",
+    "Am Abend habe ich oft mit anderen Touristen gesprochen und wir haben zusammen gegessen.": "gesprochen, gegessen",
+    "Aber gestern habe ich einen Unglückstag gehabt.": "gehabt",
+    "Am Nachmittag bin ich Ski gefahren.": "gefahren",
+    "Ich bin nicht vorsichtig gewesen und bin gefallen.": "gewesen, gefallen",
+    "Ich bin zum Arzt gegangen.": "gegangen",
+    "Der Arzt hat gesagt, der Fuss ist nicht gebrochen.": "gesagt, gebrochen",
+    "Was hast du am Wochenende gemacht?": "gemacht",
+}
 
-partizip_notes = [
-    ("Praėjo. Veiksmažodis: vergehen. Partizip zwei: vergangen.", "Die Zeit ist vergangen."),
-    ("Slidinėjau. Veiksmažodis: Ski fahren. Perfekt su haben.", "Ich habe Ski gefahren."),
-    ("Kalbėjau. Veiksmažodis: sprechen. Partizip zwei: gesprochen.", "Ich habe gesprochen."),
-    ("Valgėme. Veiksmažodis: essen. Partizip zwei: gegessen.", "Wir haben gegessen."),
-    ("Buvau. Veiksmažodis: sein. Partizip zwei: gewesen.", "Ich bin gewesen."),
-    ("Nukritau. Veiksmažodis: fallen. Perfekt su sein.", "Ich bin gefallen."),
-    ("Nuėjau. Veiksmažodis: gehen. Perfekt su sein.", "Ich bin gegangen."),
-    ("Pasakė. Veiksmažodis: sagen. Partizip zwei: gesagt.", "Der Arzt hat gesagt."),
-    ("Sulūžęs. Veiksmažodis: brechen. Partizip zwei: gebrochen.", "Der Fuss ist gebrochen."),
-    ("Veikei. Veiksmažodis: machen. Partizip zwei: gemacht.", "Was hast du gemacht?"),
+partizip_haben = [
+    (
+        "Slidinėjau. Veiksmažodis: Ski fahren. Partizip zwei: gefahren. Vartojamas su haben.",
+        "Ich habe Ski gefahren.",
+        "gefahren",
+    ),
+    (
+        "Kalbėjau. Veiksmažodis: sprechen. Partizip zwei: gesprochen. Vartojamas su haben.",
+        "Ich habe gesprochen.",
+        "gesprochen",
+    ),
+    (
+        "Valgėme. Veiksmažodis: essen. Partizip zwei: gegessen. Vartojamas su haben.",
+        "Wir haben gegessen.",
+        "gegessen",
+    ),
+    (
+        "Pasakė. Veiksmažodis: sagen. Partizip zwei: gesagt. Vartojamas su haben.",
+        "Der Arzt hat gesagt.",
+        "gesagt",
+    ),
+    (
+        "Sulūžęs. Veiksmažodis: brechen. Partizip zwei: gebrochen.",
+        "Der Fuss ist gebrochen.",
+        "gebrochen",
+    ),
+    (
+        "Veikei. Veiksmažodis: machen. Partizip zwei: gemacht. Vartojamas su haben.",
+        "Was hast du gemacht?",
+        "gemacht",
+    ),
+]
+
+partizip_sein = [
+    (
+        "Praėjo. Veiksmažodis: vergehen. Partizip zwei: vergangen. Vartojamas su sein.",
+        "Die Zeit ist vergangen.",
+        "vergangen",
+    ),
+    (
+        "Buvau. Veiksmažodis: sein. Partizip zwei: gewesen. Vartojamas su sein.",
+        "Ich bin gewesen.",
+        "gewesen",
+    ),
+    (
+        "Nukritau. Veiksmažodis: fallen. Partizip zwei: gefallen. Vartojamas su sein.",
+        "Ich bin gefallen.",
+        "gefallen",
+    ),
+    (
+        "Nuėjau. Veiksmažodis: gehen. Partizip zwei: gegangen. Vartojamas su sein.",
+        "Ich bin gegangen.",
+        "gegangen",
+    ),
+]
+
+story_sentences_annotated = [
+    ("Liebe Anna,", None),
+    ("ich bin schon zwei Wochen im Flumserberg und morgen fahre ich nach Hause.", None),
+    ("Die Zeit ist sehr schnell vergangen!", "vergangen"),
+    ("Der Urlaub war fantastisch.", None),
+    ("Ich habe jeden Tag Ski gefahren und das Wetter war super.", "gefahren"),
+    ("Am Abend habe ich oft mit anderen Touristen gesprochen und wir haben zusammen gegessen.", "gesprochen, gegessen"),
+    ("Aber gestern habe ich einen Unglückstag gehabt.", "gehabt"),
+    ("Am Nachmittag bin ich Ski gefahren.", "gefahren"),
+    ("Ich bin nicht vorsichtig gewesen und bin gefallen.", "gewesen, gefallen"),
+    ("Ich konnte nicht mehr laufen.", None),
+    ("Ich bin zum Arzt gegangen.", "gegangen"),
+    ("Der Arzt hat gesagt, der Fuss ist nicht gebrochen.", "gesagt, gebrochen"),
+    ("Aber jetzt darf ich nicht mehr Ski fahren.", None),
+    ("Das ist sehr schade!", None),
+    ("Heute bleibe ich im Hotel und lese ein Buch.", None),
+    ("Morgen fahre ich nach Hause.", None),
+    ("Wie geht es dir?", None),
+    ("Was hast du am Wochenende gemacht?", "gemacht"),
+    ("Liebe Grüsse, Tomas", None),
 ]
 
 
 # ===== CREATE AUDIO =====
+
+# 1. Full story in German — listen for general meaning
 add_section("Pirmiausia visas pasakojimas vokiškai. Klausykis bendros prasmės.")
 add_full_story(repeats=1)
 
+# 2. Full Lithuanian translation
 add_section("Dabar visas vertimas į lietuvių kalbą.")
 add_spoken(full_story_lithuanian, "lt", pause_long)
 
-add_section("Dabar mokomės sakiniais. Išgirsi lietuviškai, tada vokiškai tris kartus.")
+# 3. Sentence pairs with active recall pause and Partizip II highlighting
+add_section(
+    "Dabar mokomės sakiniais. Išgirsi lietuviškai, tyla trims sekundėms — pabandyk atkurti vokiškai, tada išgirsi du kartus."
+)
 for lithuanian, german in story_pairs:
-    add_learning_pair(lithuanian, german, repeats=3)
+    partizip = sentence_partizip_map.get(german)
+    add_learning_pair(lithuanian, german, repeats=2, partizip_form=partizip)
 
-add_section("Svarbiausios Partizip zwei formos iš šio pasakojimo.")
-for lithuanian, german in partizip_notes:
-    add_learning_pair(lithuanian, german, repeats=2)
+# 4a. Partizip II structured section — haben group
+add_section("Svarbiausios Partizip zwei formos. Pirma veiksmažodžiai su haben.")
+for lithuanian, german, form in partizip_haben:
+    add_partizip_note(lithuanian, german, form)
 
+# 4b. Partizip II structured section — sein group
+add_section("Dabar veiksmažodžiai su sein.")
+for lithuanian, german, form in partizip_sein:
+    add_partizip_note(lithuanian, german, form)
+
+# 5. Annotated story reading with Partizip II callouts per sentence
+add_section("Dabar pasakojimas sakinys po sakinio. Po kiekvieno sakinio su Partizip zwei išgirsi formą lėtai.")
+add_annotated_story()
+
+# 6. Comprehension test — German then pause then Lithuanian
+add_section("Supratimo testas. Išgirsi vokiškai. Pabandyk suprasti. Tada išgirsi lietuviškai.")
+add_comprehension_test()
+
+# 7. Final full story twice — speak along
 add_section("Pabaigai visas pasakojimas vokiškai du kartus. Bandyk kalbėti kartu.")
 add_full_story(repeats=2)
 
@@ -180,8 +313,6 @@ add_full_story(repeats=2)
 final_audio = sum(audio_segments)
 final_audio.export(OUTPUT_FILE, format="mp3")
 
-
-# Cleanup
 if os.path.exists(TEMP_FILE):
     os.remove(TEMP_FILE)
 
