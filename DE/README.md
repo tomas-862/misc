@@ -67,6 +67,20 @@ python partizip_ii.py
 
 ---
 
+## 5. `flumserberg_story.py`
+
+- Generates audio for learning a short German Partizip II story about a ski holiday in Flumserberg.
+- Includes the full German story, Lithuanian translation, sentence-by-sentence Lithuanian prompts, repeated German sentences, and key Partizip II forms.
+- Usage:
+
+```bash
+python flumserberg_story.py
+```
+
+- Output: `flumserberg_story_YYYYMMDD.mp3`
+
+---
+
 ## Requirements
 
 ```bash
