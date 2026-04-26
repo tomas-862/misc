@@ -2,7 +2,7 @@
 
 # German Language Learning Scripts
 
-This directory contains Python scripts that generate **audio files for learning German**. There are currently three scripts:
+This directory contains Python scripts that generate **audio files for learning German**.
 
 ---
 
@@ -49,6 +49,21 @@ python nouns_nominative.py
 ```
 
 - Output: `nouns_nominative_YYYYMMDD.mp3`
+
+---
+
+## 4. `partizip_ii.py`
+
+- Generates audio for learning **Partizip II / Perfekt** forms.
+- Includes a short summary of the rules, regular verbs, irregular verbs, separable verbs, inseparable prefixes, `-ieren` verbs, and `haben` vs. `sein` examples.
+- Uses English prompts followed by German examples repeated twice.
+- Usage:
+
+```bash
+python partizip_ii.py
+```
+
+- Output: `partizip_ii_YYYYMMDD.mp3`
 
 ---
 
