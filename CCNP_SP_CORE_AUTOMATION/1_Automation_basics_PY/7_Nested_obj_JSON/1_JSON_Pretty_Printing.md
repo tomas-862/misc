@@ -9,6 +9,7 @@ To work with JSON in Python, you need to import the `json` module, which provide
 import json
 ```
 
+
 ## JSON Structure
 JSON consists of key-value pairs, where:
 - Keys are strings.
